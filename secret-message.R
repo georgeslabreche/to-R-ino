@@ -3,13 +3,13 @@
 ################################################
 
 # Define the function that will calculate the plot's X values.
-calculate_x = function(t){
-  16 * sin(t)^3
+calculate_x = function(x){
+  16 * sin(x)^3
 }
 
 # Define the function that will calculate the plot's Y values.
-calculate_y = function(t){
-  13 * cos(t) - 5*cos(2*t) - 2*cos(3*t) - cos(4*t)
+calculate_y = function(x){
+  13 * cos(x) - 5*cos(2*x) - 2*cos(3*x) - cos(4*x)
 }
 
 
@@ -52,6 +52,7 @@ lines(x, y, col='red', lty=1, lwd=3)
 ##################
 
 # Things to try:
-#   1. What happens when you change the value of lty and lwd?
-#   2. Play with the calculate_x and calculate_y functions.
+#   i.  What happens when you change the value of lty and lwd?
+#
+#   ii. Play with the calculate_x and calculate_y functions.
 #       What happens when you change some numbers or remove parts of it?
