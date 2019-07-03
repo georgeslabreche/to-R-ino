@@ -2,11 +2,28 @@ library(mapdeck)
 
 viewer = getOption("viewer")
 
+# Prep for authentication to Mapbox
 key = ""
 set_token(key)
 
+######################
+# 1. Fetch the data. #
+######################
+
 crash_data = read.csv("https://git.io/geocompr-mapdeck")
+
+
+########################
+# 2. Prepare the data. #
+########################
+
 crash_data = na.omit(crash_data)
+
+
+#####################
+# 3. Plot the data. #
+#####################
+
 ms = mapdeck_style("dark")
 
 mapdeck(style = ms, pitch = 45, location = c(0, 52), zoom = 4) %>%

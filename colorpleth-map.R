@@ -1,17 +1,27 @@
 library(plotly)
 
+# Prep for authentication to Plotly.
 Sys.setenv("plotly_username" = "")
 Sys.setenv("plotly_api_key" = "")
+
+
+######################
+# 1. Fetch the data. #
+######################
 
 df = read.csv("https://raw.githubusercontent.com/plotly/datasets/master/2011_us_ag_exports.csv")
 df$hover = with(df, paste(state, '<br>', "Beef", beef, "Dairy", dairy, "<br>",
                            "Fruits", total.fruits, "Veggies", total.veggies,
                            "<br>", "Wheat", wheat, "Corn", corn))
 
+#####################
+# 3. Plot the data. #
+#####################
+
 # give state boundaries a white border
 l = list(color = toRGB("white"), width = 2)
-# specify some map projection/options
 
+# specify some map projection/options
 g = list(
   scope = 'usa',
   projection = list(type = 'albers usa'),

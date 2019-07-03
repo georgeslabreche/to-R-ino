@@ -8,6 +8,7 @@ library(rworldmap)
 # Dowload the data from CSV into a R data frame object
 airports_df = read.csv("https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat", header = FALSE)
 
+
 ########################
 # 2. Prepare the data. #
 ########################
@@ -34,6 +35,7 @@ plot(airport_map,
 # Mark the location of airports.
 points(airports_df$lon, airports_df$lat,
        col="red", pch=18, cex=0.5)
+
 
 #################################################
 # 4a. Experiment: Show airports in France only. #
