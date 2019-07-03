@@ -28,7 +28,7 @@ y = calculate_y(input_sample)
 
 
 #######################################
-# 3. Plot the calcualted data points. #
+# 3. Plot the calculated data points. #
 #######################################
 
 # Display the secret message in a new window.
