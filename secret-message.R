@@ -4,7 +4,7 @@ plot_secret_message = function(){
   # Display the secret message in a new window.
   dev.new()
   
-  # Define our plotting box
+  # Define our plotting box.
   plot(x=c(-20, 20),
        y=c(-20, 20),
        type='n',
