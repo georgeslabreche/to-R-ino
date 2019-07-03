@@ -4,13 +4,14 @@ plot_secret_message = function(){
   # Display the secret message in a new window.
   dev.new()
   
-  # Define our plotting box.
-  plot(x=c(-20, 20),
-       y=c(-20, 20),
-       type='n',
-       axes=FALSE,
-       xlab='',
-       ylab='')
+  # Define our plotting box by drawing an empty plot.
+  plot(x=0, y=0,
+      xlim=c(-20, 20),
+      ylim=c(-20, 20),
+      type='n',
+      axes=FALSE,
+      xlab='',
+      ylab='')
   
   # Define the function that will calculate the plot's X values.
   x_values = function(t){
