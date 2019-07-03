@@ -2,12 +2,12 @@
 # 1. Define how plot to top and bottom parts of the heart. #
 ############################################################
 
-# Function to plot the top part of the heat.
+# Function to plot the top part of the heart.
 heart_top = function(x){
   sqrt(1-(abs(x)-1)^2)
 }
 
-# Function to plot the bottom part of the heat.
+# Function to plot the bottom part of the heart.
 heart_bottom = function(x){
   -3 * sqrt(1-sqrt(abs(x)) / sqrt(2))
 }
@@ -22,7 +22,7 @@ dev.new()
 # Plot the functions using the curve() functions.
 # First the top part.
 curve(heart_top(x),
-      from=-2, to=2, n=100,
+      from=-2, to=2, n=1000,
       xlim=c(-2, 2), ylim=c(-3, 1), # Why are we doing this?
       col='red',
       lty=1,
@@ -33,7 +33,7 @@ curve(heart_top(x),
 
 # Then the bottom part.
 curve(heart_bottom(x),
-      from=-2, to=2, n=100,
+      from=-2, to=2, n=1000,
       lty=1,
       lwd=3,
       col='red',
