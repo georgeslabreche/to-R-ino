@@ -33,4 +33,3 @@ map = leaflet(us_capitals_df) %>%
 
 print(map)
 
-  

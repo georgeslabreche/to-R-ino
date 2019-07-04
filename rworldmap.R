@@ -6,7 +6,8 @@ library(rworldmap)
 ######################
 
 # Dowload the data from CSV into a R data frame object
-airports_df = read.csv("https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat", header = FALSE)
+airports_df = read.csv("https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat",
+                       header=FALSE)
 
 
 ########################
@@ -29,8 +30,8 @@ airport_map = getMap(resolution = "low")
 
 # Draw the map. Bound it in Europe.
 plot(airport_map,
-     xlim=c(-20, 59), # West/East
-     ylim=c(35, 71)) # South/North
+     xlim=c(-20, 59), # West/East longitude between -180 and 180 degrees.
+     ylim=c(35, 71)) # South/North latidude between -90 and 90 degrees.
 
 # Mark the location of airports.
 points(airports_df$lon, airports_df$lat,
