@@ -1,6 +1,6 @@
 #############################################################################################
 #                                                                                           #
-# Visualize air quality data fetched from HabitatMap's AirCasting API.                      #          
+# Fetch air quality data collection sessions from HabitatMap's AirCasting API.              #          
 #                                                                                           #
 # AirCasting API documentations:                                                            #
 #   https://github.com/HabitatMap/AirCasting/blob/master/doc/api.md                         #
@@ -20,27 +20,13 @@
 #   Documentation: https://cran.r-project.org/web/packages/rjson/rjson.pdf
 library(rjson)
 
-
 ##########################
 # Initialize parameters. #
 ##########################
 
 # The API request URLs, as per the AirCasting API documentation.
 API_BASE_URL = 'http://aircasting.org'
-
-API_GET_REQUESTS = list(
-  # Return a list of mobile sessions and their streams (without measurements).
-  sessions_mobile = '/api/mobile/sessions.json',
-  
-  # Return a list of fixed active sessions and their streams (without measurements).
-  sessions_fixed_active = '/api/fixed/active/sessions.json',
-  
-  # Returns a mobile session with selected stream and all its measurements.
-  mobile_session_stream_and_measurements = '/api/mobile/sessions2/:id',
-  
-  # Returns measurements for a given stream id.
-  measurements = '/api/measurements.json'
-)
+API_GET_REQUEST_SESSIONS_MOBILE = '/api/mobile/sessions.json'
 
 # Define some bounding boxes for areas of interest.
 #   Convenient tool: https://boundingbox.klokantech.com/
@@ -48,7 +34,6 @@ API_GET_REQUESTS = list(
 #
 #   Another tool: http://bboxfinder.com/
 #
-
 # London.
 bounds_london = list(
   west = -0.5074,
@@ -118,7 +103,7 @@ url_encoded_filter_params = URLencode(filter_parameters_json)
 
 # Now stick everything together to build a API GET Request URL.
 api_request_url = paste(API_BASE_URL,
-                        API_GET_REQUESTS$sessions_mobile,
+                        API_GET_REQUEST_SESSIONS_MOBILE,
                         '?q=',
                         url_encoded_filter_params,
                         sep='')
