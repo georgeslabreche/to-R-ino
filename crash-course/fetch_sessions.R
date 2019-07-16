@@ -34,6 +34,7 @@ API_GET_REQUEST_SESSIONS_MOBILE = '/api/mobile/sessions.json'
 #
 #   Another tool: http://bboxfinder.com/
 #
+
 # London.
 bounds_london = list(
   west = -0.5074,
@@ -58,8 +59,25 @@ bounds_LA = list(
   north = 34.3373
 )
 
+# Brussels.
+bounds_brussels = list(
+  west = 4.245833,
+  east = 4.485531,
+  south = 50.767636,
+  north = 50.915013
+)
+
+# Region around Campus Luigi Einaudi, University of Turin.
+bounds_CLE = list(
+  west = 7.683062,
+  east = 7.711885,
+  south = 45.06612,
+  north = 45.083257
+)
+
+
 # Select which bounding box to work with when running this script.
-bounds_selected = bounds_NYC
+bounds_selected = bounds_brussels
 
 # As per the AirCasting API documentations, the time_from and time_to parameters 
 # should be passed as seconds since epoch. They should be expressed in UTC.
