@@ -1,6 +1,6 @@
-################################################
-# 1. Define how to get X and Y values to plot. #
-################################################
+###############################
+# 1. Fetch/Generate the data. #
+###############################
 
 # Define the function that will calculate the plot's X values.
 calculate_x = function(x){
@@ -12,10 +12,11 @@ calculate_y = function(x){
   13 * cos(x) - 5*cos(2*x) - 2*cos(3*x) - cos(4*x)
 }
 
+###############################
+# 2. Prepare the data.        #
+###############################
 
-################################
-# 2. Calculate X and Y values. #
-################################
+# Calculate X and Y values. 
 
 # Build the ranges of t values that will serve as 
 # input to the calculate_x and calculate_y functions.
@@ -27,9 +28,9 @@ x = calculate_x(input_sample)
 y = calculate_y(input_sample)
 
 
-#######################################
-# 3. Plot the calculated data points. #
-#######################################
+#####################
+# 3. Plot the data. #
+#####################
 
 # Display the secret message in a new window.
 dev.new()
