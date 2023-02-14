@@ -15,7 +15,7 @@ library(rworldmap)
 # ASSIGN the map RETURNED by the getMap FUNTION to the my_map VARIABLE.
 my_map = getMap(resolution="low")
 
-# ASSIGN the NUMERIC values -75 and 43 to the NY_lon and NY_lat VARIABLES.
+# ASSIGN the NUMERIC values -73.9 and 40.7 to the NY_lon and NY_lat VARIABLES.
 # Thees values represent longitude and latitude coordinate location of New York City
 NY_lon = -73.9
 NY_lat = 40.7
@@ -23,6 +23,10 @@ NY_lat = 40.7
 # Create coordinate VARIABLES for Turin.
 Turin_lon = 7.7
 Turin_lat = 45.1
+
+# Create coordinate VARIABLES for Reykjavík.
+Reyk_lon = -21.82
+Reyk_lat = 64.12
 
 #' A FUNCTION that will draw a point and label on the map
 #'
@@ -53,6 +57,8 @@ plot(my_map, xlim=boundary_lon, ylim=boundary_lat)
 # INVOKE the draw_map_point function to draw location points and labels.
 draw_map_point(NY_lon, NY_lat, "New York", 2)
 draw_map_point(Turin_lon, Turin_lat, "Turin", 4)
+draw_map_point(Reyk_lon, Reyk_lat, "Reykjavík", 4)
 
-# INVOKE the segments function to draw a line between the two city points.
-segments(NY_lon, NY_lat, Turin_lon, Turin_lat, col="red")
+# INVOKE the segments function to draw lines between the city points.
+segments(NY_lon, NY_lat, Reyk_lon, Reyk_lat, col="red")
+segments(Reyk_lon, Reyk_lat, Turin_lon, Turin_lat, col="red")
