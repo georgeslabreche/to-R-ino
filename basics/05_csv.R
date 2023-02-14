@@ -1,57 +1,42 @@
+# LOAD the LIBRARY needed to read jpeg image files
 library("jpeg")
 
-# the url
+# the URL of the CSV file
 url = "https://data.kingcounty.gov/api/views/yaai-7frk/rows.csv?accessType=DOWNLOAD"
 
 # the dataframe
 df = read.csv(url)
 
+# apply a filter so that we only keep dog data
+df = df[df$animal_type == "Dog" , ]
 
-# how many rows
+# how many rows?
 print(ncol(df))
 
-# How many columns?
+# how many columns?
 print(nrow(df))
 
-
-# the column names
-print(colnames(df))
-
-# print all values from the "Image" column
-# print(df[, "Image"])
-
-# get random image
+# get random dog image url
 ran_row_index = sample(1:nrow(df), 1)
 img_url = df[ran_row_index, "Image"]
 
-# download a random image
-#download.file(img_url, 'cutie.jpg', mode = 'wb')
+# download the random dog image
+download.file(img_url, 'puppy.jpg', mode = 'wb')
 
 # read the image
-#img = readJPEG("cutie.jpg",native=TRUE)
+img = readJPEG("puppy.jpg",native=TRUE)
 
-# show the image
-#plot(0:1,0:1,type="n",ann=FALSE,axes=FALSE)
-#rasterImage(img,0,0,1,1)
+# prepare the plotting area
+plot(0:1,0:1, type="n")
 
+# draw a line
+lines(x=c(0, 0.2, 0.6, 1),
+     y=c(0, 0.6, 0.6, 1),
+     col="blue")
 
-# AGGRESSIVE
-print(unique(df[,"Temperament"]))
-df_agg = df[df$Temperament == "AGGRESSIVE",]
-ran_row_index = sample(1:nrow(df_agg), 1)
-img_url = df[ran_row_index, "Image"]
+# INVOKE the rasterImage() FUNCTION to display the image on the plot
+rasterImage(img, 0.4, 0, 0.8, 0.4)
 
-# download a random image
-download.file(img_url, 'cutie.jpg', mode = 'wb')
-
-print(ran_row_index)
-print(img_url)
-
-# read the image
-img = readJPEG("cutie.jpg",native=TRUE)
-
-
-# show the image
-plot(0:1,0:1,type="n",ann=FALSE,axes=FALSE)
-rasterImage(img,0,0,1,1)
-
+# Draw some points to show the image boundaries used in rasterImage()
+points(0.4, 0, pch=4, cex=3, col="red")
+points(0.8, 0.4, pch=4, cex=3, col="red")

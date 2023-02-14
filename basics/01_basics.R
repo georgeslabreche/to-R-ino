@@ -79,3 +79,23 @@ vect_filtered = vect_c[mask]
 
 # INVOKE the print FUNCTION to print the filtered vector.
 print(vect_filtered)
+
+
+# CREATE your own FUNCTION
+# 1 mile = 1.60934 km
+miles_to_km = function(miles) {
+  km = miles * 1.60934
+  return(km)
+}
+
+
+# INVOKE the FUNCTION you created
+marathon = miles_to_km(26.2)
+print(marathon)
+
+# Another FUNCTION
+fahrenheit_to_celsius = function(temp_F) {
+  temp_C <- (temp_F - 32) * 5 / 9
+  return(temp_C)
+}
+
