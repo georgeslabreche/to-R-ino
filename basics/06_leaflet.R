@@ -1,6 +1,9 @@
 # LOAD the leaflet library
 library(leaflet)
 
+# LOAD the geojsonio library
+library(geojsonio)
+
 # Basic example from https://rstudio.github.io/leaflet/
 get_basic_map = function(){
   
@@ -14,7 +17,7 @@ get_basic_map = function(){
 # GeoJSON example taken from https://stackoverflow.com/a/31798996
 get_geojson_map = function(){
   url = "https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/california.geojson"
-  geojson = jsonlite::fromJSON(url)
+  geojson = geojsonio::geojson_read(url)
   
   m = leaflet() %>% 
     addTiles() %>%
