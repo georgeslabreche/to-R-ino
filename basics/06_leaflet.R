@@ -71,3 +71,7 @@ print(basic_map)
 
 # That website is great in general for visualization examples in R:
 # https://r-graph-gallery.com/
+#
+# IMPORTANT:
+# When you are googling for Leaflet stuff make sure to use the R term in your search, i.e. "R Leaflet".
+# This is because Leaflet is also used in other programming languages.
