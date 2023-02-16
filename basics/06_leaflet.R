@@ -52,7 +52,7 @@ geojson_map = get_geojson_map()
 custom_marker_map = get_custom_marker_map()
 
 # Display one of the maps
-print(get_basic_map)
+print(basic_map)
 
 # Check out the tutorial
 # https://rstudio.github.io/leaflet/
