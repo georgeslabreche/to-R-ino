@@ -71,5 +71,3 @@ print(basic_map)
 
 # That website is great in general for visualization examples in R:
 # https://r-graph-gallery.com/
-
-
