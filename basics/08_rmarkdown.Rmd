@@ -1,8 +1,15 @@
 ---
-title: "Take Home Exam CS2023"
+title: "Take Home Exam CC2023"
 author: "Georges"
 date: "2023-02-17"
 output: html_document
+navbar:
+  title: "My Website"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
 ---
 
 ```{r setup, include=FALSE}
@@ -10,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Grading System
-The exam is graded out of **30 points**:
+Use RPubs to publish a report. The exam is graded out of **30 points**:
 
 - At least 1 map: **5 points**.
 - At least 2 distinct plot types: **8 points**. 
