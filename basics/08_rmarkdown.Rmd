@@ -141,11 +141,3 @@ segments(NY_lon, NY_lat, Reyk_lon, Reyk_lat, col="red")
 segments(Reyk_lon, Reyk_lat, Turin_lon, Turin_lat, col="red")
 
 ```
-
-
-
-
-
-
-
-
