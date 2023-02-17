@@ -1,0 +1,151 @@
+---
+title: "Take Home Exam CS2023"
+author: "Georges"
+date: "2023-02-17"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Grading System
+The exam is graded out of **30 points**:
+
+- At least 1 map: **5 points**.
+- At least 2 distinct plot types: **8 points**. 
+- At least 1 creative visualization of your own imagination: **5 points**.
+- An introduction text, main body text analyzing the visualizations (interpreting the visualized data), and a conclusion: **5 points**.
+- A navigation menu: **5 points**. 
+- Presentation and tidiness: **2 points**.
+
+Here are some examples from last year's students who received full marks:
+
+- [World’s Top Bitcoin Mining Countries](https://rpubs.com/giammo23/top_bitcoin_mining_countries)
+- [Financial problems in companies due to COVID-19](https://rpubs.com/Julietagalli/904836)
+- [Health Facilities Distribution in Kenya - 2018/2019](https://rpubs.com/pmutua/HealthFacilitiesinKenya)
+
+**Note how those students event cited their sources. That counts towards great presentation.**
+
+## What's Next?
+- Play with [RShiny](https://shiny.rstudio.com/):
+  - [Shiny Basics](https://shiny.rstudio.com/tutorial/written-tutorial/lesson1/)
+  - [Build an App](https://rstudio-education.github.io/shiny-course/)
+  - [Keep Learning!](https://shiny.rstudio.com/tutorial/)
+- Keep practicing R.
+- Learn Python.
+
+
+# Sample Visualizations
+Here are some examples!
+
+## My Leaflet Map
+
+```{r, echo=FALSE, message=FALSE}
+# LOAD the leaflet library
+library(leaflet)
+
+# LOAD the geojsonio library
+library(geojsonio)
+
+# Basic example from https://rstudio.github.io/leaflet/
+get_basic_map = function(){
+  
+  m = leaflet() %>%
+    addTiles() %>%  # Add default OpenStreetMap map tiles
+    addMarkers(lng=174.768, lat=-36.852, popup="The birthplace of R")
+  
+  return(m)
+}
+
+map = get_basic_map()
+
+map
+
+```
+
+## My Pie Chart!
+
+```{r, echo=FALSE}
+
+# The size of each pie slice.
+slices = c(10, 12, 4, 16, 8)
+
+# The label for each slice.
+labels = c("US", "UK", "Australia", "Germany", "France")
+
+# Invoke the PIE function to draw the pie chart.
+# Precede with dev.new() to draw the plot in a new window. 
+pie(slices, labels=labels, main="Pie Chart of Countries")
+
+```
+
+
+## My Map!
+This is my map, *check it out*:
+
+```{r, echo=FALSE, message=FALSE}
+# LOAD the rworldmap LIBRARY.
+library(rworldmap)
+
+# INVOKE the getMap FUNCTION with the resolution ARGUMENT set to "low".
+# ASSIGN the map RETURNED by the getMap FUNTION to the my_map VARIABLE.
+my_map = getMap(resolution="low")
+
+# ASSIGN the NUMERIC values -73.9 and 40.7 to the NY_lon and NY_lat VARIABLES.
+# Thees values represent longitude and latitude coordinate location of New York City
+NY_lon = -73.9
+NY_lat = 40.7
+
+# Create coordinate VARIABLES for Turin.
+Turin_lon = 7.7
+Turin_lat = 45.1
+
+# Create coordinate VARIABLES for Reykjavík.
+Reyk_lon = -21.82
+Reyk_lat = 64.12
+
+#' A FUNCTION that will draw a point and label on the map
+#'
+#' @param lon the longitude coordinate of the point location.
+#' @param lat the latitude coordinate of the point location.
+#' @param label the label of the point location.
+#' @param pos the position of the label
+#' 
+draw_map_point = function(lon, lat, label, pos){
+  
+  # INOKE the points function to draw a red point on the map at the geographic
+  # location of the given coordinate
+  points(lon, lat, pch=18, col="red")
+  
+  # INVOKE the text function to draw the names of the place next to its points.
+  text(lon, lat, label, pos=pos, col="red", cex=1)
+}
+
+# Define the map's boundaries.
+boundary_padding = 16
+boundary_lon = c(NY_lon-boundary_padding, Turin_lon+boundary_padding)
+boundary_lat = c(NY_lat-boundary_padding, Turin_lat+boundary_padding)
+
+# INVOKE the plot FUNCTION to draw the map.
+# Set the map boundaries with the xlim and ylim FUNCTION ARGUMENTS.
+plot(my_map, xlim=boundary_lon, ylim=boundary_lat)
+
+# INVOKE the draw_map_point function to draw location points and labels.
+draw_map_point(NY_lon, NY_lat, "New York", 2)
+draw_map_point(Turin_lon, Turin_lat, "Turin", 4)
+draw_map_point(Reyk_lon, Reyk_lat, "Reykjavík", 4)
+
+# INVOKE the segments function to draw lines between the city points.
+segments(NY_lon, NY_lat, Reyk_lon, Reyk_lat, col="red")
+segments(Reyk_lon, Reyk_lat, Turin_lon, Turin_lat, col="red")
+
+```
+
+
+
+
+
+
+
+
