@@ -1,0 +1,22 @@
+name: exam-instructions
+output_dir: docs
+navbar:
+  title: Exam Instructions
+  left:
+  - text: ICT for Social Good
+    href: https://www.ictforsocialgoodmaster.eu/
+  - text: GitHub
+    href: https://github.com/georgeslabreche/to-R-ino
+  - text: My HTML
+    href: my_html.html
+  - text: Profiles
+    menu:
+    - text: LinkedIn
+      href: https://www.linkedin.com/in/georgeslabreche/
+    - text: Google Scholar
+      href: https://scholar.google.com/citations?user=E89wAGsAAAAJ
+    - text: ORCID
+      href: https://orcid.org/0000-0002-2104-8789
+output:
+  html_document:
+    theme: yeti

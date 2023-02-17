@@ -2,21 +2,17 @@
 title: "Take Home Exam CC2023"
 author: "Georges"
 date: "2023-02-17"
-output: html_document
-navbar:
-  title: "My Website"
-  left:
-    - text: "Home"
-      href: index.html
-    - text: "About"
-      href: about.html
+output:
+  html_document:
+    toc: true
+    toc_float: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Grading System
+# Grading System
 Use RPubs to publish a report. The exam is graded out of **30 points**:
 
 - At least 1 map: **5 points**.
@@ -26,18 +22,27 @@ Use RPubs to publish a report. The exam is graded out of **30 points**:
 - A navigation menu: **5 points**. 
 - Presentation and tidiness: **2 points**.
 
+
+# Resources
+- [Add a floating table of contents.](https://rstudio4edu.github.io/rstudio4edu-book/doc-dress.html)
+- [Create a navigation menu.](https://rstudio4edu.github.io/rstudio4edu-book/rmd-yours.html)
+- [Source code for the crash course.](https://github.com/georgeslabreche/to-R-ino/tree/master/basics)
+
+
+# Examples
 Here are some examples from last year's students who received full marks:
 
-- [World’s Top Bitcoin Mining Countries](https://rpubs.com/giammo23/top_bitcoin_mining_countries)
-- [Financial problems in companies due to COVID-19](https://rpubs.com/Julietagalli/904836)
-- [Health Facilities Distribution in Kenya - 2018/2019](https://rpubs.com/pmutua/HealthFacilitiesinKenya)
+- [World’s Top Bitcoin Mining Countries.](https://rpubs.com/giammo23/top_bitcoin_mining_countries)
+- [Financial problems in companies due to COVID-19.](https://rpubs.com/Julietagalli/904836)
+- [Health Facilities Distribution in Kenya - 2018/2019.](https://rpubs.com/pmutua/HealthFacilitiesinKenya)
 
 **Note how those students event cited their sources. That counts towards great presentation.**
 
-## What's Next?
+
+# What's Next?
 - Play with [RShiny](https://shiny.rstudio.com/):
-  - [Shiny Basics](https://shiny.rstudio.com/tutorial/written-tutorial/lesson1/)
-  - [Build an App](https://rstudio-education.github.io/shiny-course/)
+  - [Shiny Basics.](https://shiny.rstudio.com/tutorial/written-tutorial/lesson1/)
+  - [Build an App.](https://rstudio-education.github.io/shiny-course/)
   - [Keep Learning!](https://shiny.rstudio.com/tutorial/)
 - Keep practicing R.
 - Learn Python.
